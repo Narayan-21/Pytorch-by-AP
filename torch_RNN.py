@@ -33,7 +33,7 @@ class RNN(nn.Module):
         h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size)
 
         # Forward Propagation
-        out, _ = self.rnn(x, h0)
+        out, _ = self.rnn(x, h0) # _ refers hidden state
         out = out.reshape(out.shape[0], -1)
         out = self.fc(out)
         return out

@@ -35,7 +35,7 @@ class LSTM(nn.Module):
         c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size)
 
         # Forward Propagation
-        out, _ = self.lstm(x, (h0,c0))
+        out, _ = self.lstm(x, (h0,c0)) # _ refers (hidden state, cell state)
         out = out.reshape(out.shape[0], -1)
         out = self.fc(out)
         return out
