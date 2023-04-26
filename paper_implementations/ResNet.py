@@ -77,7 +77,8 @@ class ResNet(nn.Module):
         identity_downsample = None
         layers = []
 
-        if stride != 1 or self.in_channels != out_channels * 4:
+        # The below 'if' condition is applicable while changing the block, to update the identity downsample.
+        if stride != 1 or self.in_channels != out_channels * 4: # Condition on when to change the identity downsample.
             identity_downsample = nn.Sequential(nn.Conv2d(self.in_channels, out_channels*4, kernel_size=1, stride=stride),
                                                 nn.BatchNorm2d(out_channels*4))
 
