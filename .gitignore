@@ -1,2 +1,5 @@
 flickr8k/
 runs/
+my_checkpoint_2.pth.tar
+paper_implementations/Image Captioning/flickr8k/
+paper_implementations/Image Captioning/test_examples/
